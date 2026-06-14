@@ -1,0 +1,4 @@
+CustomUI Development Mode Marker
+This file is present only in the development environment.
+It is excluded from distributed JARs by the build script.
+

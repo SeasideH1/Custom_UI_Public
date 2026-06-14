@@ -1,0 +1,70 @@
+{
+  "format": 2,
+  "id": "customui:anim2d_radar_loop",
+  "_doc": "2D 循环动画：旋转雷达扫描。loop=true 且首尾关键帧取值衔接(rotation 0→360 等价于 0)，实现无缝循环；外圈用 scale+opacity 做呼吸脉冲。停止: /customui hud stop @s customui:anim2d_radar_loop",
+  "lifetime": 80,
+  "loop": true,
+  "elements": [
+    {
+      "type": "rect",
+      "id": "radar_bg",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": 50, "w": 36, "h": 36,
+      "zIndex": 0,
+      "fill": "#A00E141A",
+      "rotation": 45
+    },
+    {
+      "type": "rect",
+      "id": "radar_pulse",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": 50, "w": 40, "h": 40,
+      "zIndex": 1,
+      "fill": "#304FC3F7",
+      "rotation": 45,
+      "keyframes": [
+        { "tick": 0, "scale": 1.0, "opacity": 0.6 },
+        { "tick": 40, "scale": 1.35, "opacity": 0.1, "easing": "easeOutQuad" },
+        { "tick": 80, "scale": 1.0, "opacity": 0.6, "easing": "easeInQuad" }
+      ]
+    },
+    {
+      "type": "rect",
+      "id": "radar_sweep",
+      "anchor": "center",
+      "origin": "bottom_center",
+      "x": 0, "y": 50, "w": 2, "h": 16,
+      "zIndex": 2,
+      "fill": "#FF4FC3F7",
+      "keyframes": [
+        { "tick": 0, "rotation": 0 },
+        { "tick": 80, "rotation": 360 }
+      ]
+    },
+    {
+      "type": "rect",
+      "id": "radar_dot",
+      "anchor": "center",
+      "origin": "center",
+      "x": 7, "y": 43, "w": 3, "h": 3,
+      "zIndex": 3,
+      "fill": "#FFFF5252",
+      "keyframes": [
+        { "tick": 0, "flash": 1, "flashMin": 0.2 }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "radar_label",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": 76, "w": 60, "h": 9,
+      "zIndex": 3,
+      "text": "SCANNING",
+      "color": "#FF9AA7B0",
+      "align": "center"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "customui:oak_vertical_slab",
+    "customui:spruce_vertical_slab",
+    "customui:birch_vertical_slab",
+    "customui:jungle_vertical_slab",
+    "customui:acacia_vertical_slab",
+    "customui:dark_oak_vertical_slab",
+    "customui:mangrove_vertical_slab",
+    "customui:cherry_vertical_slab",
+    "customui:bamboo_vertical_slab",
+    "customui:bamboo_mosaic_vertical_slab",
+    "customui:crimson_vertical_slab",
+    "customui:warped_vertical_slab"
+  ]
+}
+

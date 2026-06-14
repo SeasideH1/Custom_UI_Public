@@ -1,0 +1,70 @@
+{
+  "format": 2,
+  "id": "customui:anim3d_bobbing_marker",
+  "_doc": "3D 动画：世界坐标上下浮动 + 缩放脉冲。worldY 关键帧驱动垂直起伏，scale 与 flash 叠加呼吸感；distanceScale 随距离缩放。建议在 world 锚点 [0,66,5] 附近观察。loop 无缝循环。播放: /customui hud play @s customui:anim3d_bobbing_marker；停止: /customui hud stop @s customui:anim3d_bobbing_marker",
+  "lifetime": 48,
+  "loop": true,
+  "elements": [
+    {
+      "type": "rect",
+      "id": "bob_ring",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": 0, "w": 28, "h": 28,
+      "zIndex": 0,
+      "fill": "#304FC3F7",
+      "projection": {
+        "world": [0, 66, 5],
+        "distanceScale": { "enabled": true, "reference": 8, "min": 0.4, "max": 1.6 },
+        "throughWalls": true
+      },
+      "keyframes": [
+        { "tick": 0, "space": "3d", "worldY": 66.0, "scale": 1.0, "opacity": 0.35 },
+        { "tick": 24, "space": "3d", "worldY": 67.2, "scale": 1.25, "opacity": 0.12, "easings": { "worldY": "easeInOutQuad", "scale": "easeOutQuad", "opacity": "easeOutQuad" } },
+        { "tick": 48, "space": "3d", "worldY": 66.0, "scale": 1.0, "opacity": 0.35, "easings": { "worldY": "easeInOutQuad", "scale": "easeInQuad", "opacity": "easeInQuad" } }
+      ]
+    },
+    {
+      "type": "rect",
+      "id": "bob_core",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": 0, "w": 10, "h": 10,
+      "zIndex": 1,
+      "fill": "#FF4FC3F7",
+      "projection": {
+        "world": [0, 66, 5],
+        "distanceScale": { "enabled": true, "reference": 8, "min": 0.5, "max": 1.5 },
+        "throughWalls": true
+      },
+      "keyframes": [
+        { "tick": 0, "space": "3d", "worldY": 66.2, "flash": 0 },
+        { "tick": 12, "space": "3d", "worldY": 66.9, "flash": 1.2, "flashMin": 0.55, "easings": { "worldY": "easeOutQuad" } },
+        { "tick": 24, "space": "3d", "worldY": 67.4, "flash": 0, "easings": { "worldY": "easeInOutQuad" } },
+        { "tick": 36, "space": "3d", "worldY": 66.9, "flash": 1.2, "flashMin": 0.55, "easings": { "worldY": "easeInOutQuad" } },
+        { "tick": 48, "space": "3d", "worldY": 66.2, "flash": 0, "easings": { "worldY": "easeInQuad" } }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "bob_label",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": 14, "w": 48, "h": 8,
+      "zIndex": 2,
+      "text": "补给",
+      "color": "#FFE8F4FA",
+      "align": "center",
+      "projection": {
+        "world": [0, 66, 5],
+        "distanceScale": { "enabled": true, "reference": 8, "min": 0.5, "max": 1.5 },
+        "throughWalls": true
+      },
+      "keyframes": [
+        { "tick": 0, "space": "3d", "worldY": 65.6 },
+        { "tick": 24, "space": "3d", "worldY": 66.8, "easings": { "worldY": "easeInOutQuad" } },
+        { "tick": 48, "space": "3d", "worldY": 65.6, "easings": { "worldY": "easeInOutQuad" } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "customui:hardpoint_a",
+  "displayName": "Hardpoint A",
+  "origin": [50, 64, 50],
+  "captureTimeTicks": 150,
+  "gameMode": "hardpoint",
+  "scorePerTick": 0.08,
+  "scoreLimit": 250,
+  "rotateAfterCapture": true,
+  "nextZoneId": "customui:hardpoint_b",
+  "minPlayersToCapture": 1,
+  "allowRecapture": true,
+  "onCaptureComplete": "customui:zone/hardpoint_rotate",
+  "ops": [
+    {
+      "type": "sphere",
+      "mode": "add",
+      "center": [50, 67, 50],
+      "radius": 6.0
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "format": 2,
+  "id": "customui:anim3d_orbit_path",
+  "_doc": "3D 动画：世界坐标水平环绕路径。worldX/worldZ 关键帧驱动标记点绕 [0,66,0] 公转，配合 rotation 自旋与 aimFade（背对时淡出）。建议在原点附近测试。loop 首尾 world 坐标衔接。播放: /customui hud play @s customui:anim3d_orbit_path",
+  "lifetime": 80,
+  "loop": true,
+  "elements": [
+    {
+      "type": "rect",
+      "id": "orbit_trail",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": 0, "w": 6, "h": 14,
+      "zIndex": 0,
+      "fill": "#50FFD54F",
+      "projection": {
+        "world": [3, 66, 0],
+        "distanceScale": { "enabled": true, "reference": 10, "min": 0.35, "max": 1.8 },
+        "throughWalls": true,
+        "aimFade": { "enabled": true, "innerAngle": 10, "outerAngle": 35, "minOpacity": 0.15 }
+      },
+      "keyframes": [
+        { "tick": 0, "space": "3d", "world": [3, 66, 0], "rotation": 0, "opacity": 0.7 },
+        { "tick": 20, "space": "3d", "world": [0, 66, 3], "rotation": 90, "opacity": 0.85, "easings": { "worldX": "easeInOutCubic", "worldZ": "easeInOutCubic", "rotation": "linear" } },
+        { "tick": 40, "space": "3d", "world": [-3, 66, 0], "rotation": 180, "opacity": 0.7, "easings": { "worldX": "easeInOutCubic", "worldZ": "easeInOutCubic", "rotation": "linear" } },
+        { "tick": 60, "space": "3d", "world": [0, 66, -3], "rotation": 270, "opacity": 0.85, "easings": { "worldX": "easeInOutCubic", "worldZ": "easeInOutCubic", "rotation": "linear" } },
+        { "tick": 80, "space": "3d", "world": [3, 66, 0], "rotation": 360, "opacity": 0.7, "easings": { "worldX": "easeInOutCubic", "worldZ": "easeInOutCubic", "rotation": "linear" } }
+      ]
+    },
+    {
+      "type": "rect",
+      "id": "orbit_head",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": -6, "w": 8, "h": 8,
+      "zIndex": 1,
+      "fill": "#FFFFD54F",
+      "projection": {
+        "world": [3, 66.5, 0],
+        "distanceScale": { "enabled": true, "reference": 10, "min": 0.4, "max": 1.6 },
+        "throughWalls": true,
+        "aimFade": { "enabled": true, "innerAngle": 10, "outerAngle": 35, "minOpacity": 0.2 }
+      },
+      "keyframes": [
+        { "tick": 0, "space": "3d", "world": [3, 66.5, 0], "scale": 1.0 },
+        { "tick": 20, "space": "3d", "world": [0, 66.5, 3], "scale": 1.15, "easings": { "worldX": "easeInOutCubic", "worldZ": "easeInOutCubic", "scale": "easeOutQuad" } },
+        { "tick": 40, "space": "3d", "world": [-3, 66.5, 0], "scale": 1.0, "easings": { "worldX": "easeInOutCubic", "worldZ": "easeInOutCubic", "scale": "easeInOutQuad" } },
+        { "tick": 60, "space": "3d", "world": [0, 66.5, -3], "scale": 1.15, "easings": { "worldX": "easeInOutCubic", "worldZ": "easeInOutCubic", "scale": "easeOutQuad" } },
+        { "tick": 80, "space": "3d", "world": [3, 66.5, 0], "scale": 1.0, "easings": { "worldX": "easeInOutCubic", "worldZ": "easeInOutCubic", "scale": "easeInQuad" } }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "orbit_center_label",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": 0, "w": 40, "h": 8,
+      "zIndex": 2,
+      "text": "核心",
+      "color": "#FF9AA7B0",
+      "align": "center",
+      "projection": {
+        "world": [0, 66.2, 0],
+        "distanceScale": { "enabled": true, "reference": 10, "min": 0.5, "max": 1.4 },
+        "throughWalls": true
+      },
+      "keyframes": [
+        { "tick": 0, "space": "3d", "opacity": 0.6, "flash": 0.8, "flashMin": 0.35 }
+      ]
+    }
+  ]
+}

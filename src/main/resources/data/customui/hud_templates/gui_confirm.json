@@ -1,0 +1,88 @@
+{
+  "format": 2,
+  "id": "customui:gui_confirm",
+  "_doc": "确认对话框 GUI 示例。打开: /customui gui open @s customui:gui_confirm，或由其它模板 onClick.openTemplate 弹出。确认按钮执行 function 并关闭，取消按钮仅关闭。pauseGame 在单人模式下暂停游戏。",
+  "lifetime": -1,
+  "screenType": "gui",
+  "gui": {
+    "blur": true,
+    "pauseGame": true,
+    "close": {
+      "key": "key.keyboard.escape",
+      "translation": "gui.customui.confirm.close",
+      "name": "confirm_close",
+      "function": "customui:gui/confirm_cancelled"
+    }
+  },
+  "elements": [
+    {
+      "type": "rect",
+      "id": "dim",
+      "anchor": "center", "origin": "center",
+      "x": 0, "y": 0, "w": 4000, "h": 4000,
+      "zIndex": 0, "fill": "#80000000"
+    },
+    {
+      "type": "group",
+      "id": "dialog",
+      "anchor": "center", "origin": "center",
+      "x": 0, "y": 0, "w": 180, "h": 84,
+      "zIndex": 10,
+      "keyframes": [
+        { "tick": 0, "scale": 0.85, "opacity": 0 },
+        { "tick": 6, "scale": 1, "opacity": 1, "easing": "easeOutBack" }
+      ],
+      "children": [
+        {
+          "type": "rounded_rect", "id": "dialog_bg",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 0, "y": 0, "w": 180, "h": 84,
+          "zIndex": 0, "fill": "#E0101820", "cornerRadius": 8
+        },
+        {
+          "type": "text", "id": "dialog_title",
+          "anchor": "top_center", "origin": "top_center",
+          "x": 0, "y": 10, "w": 170, "h": 12,
+          "zIndex": 1, "text": "确认执行该操作?", "fontSize": 10, "color": "#FFFFFFFF", "align": "center"
+        },
+        {
+          "type": "text", "id": "dialog_desc",
+          "anchor": "top_center", "origin": "top_center",
+          "x": 0, "y": 28, "w": 170, "h": 10,
+          "zIndex": 1, "text": "该操作会触发数据包函数", "fontSize": 8, "color": "#FF9AA7B0", "align": "center"
+        },
+        {
+          "type": "rounded_rect", "id": "ok_bg",
+          "anchor": "bottom_left", "origin": "bottom_left",
+          "x": 14, "y": -12, "w": 66, "h": 16,
+          "zIndex": 1, "fill": "#C02E7D32", "cornerRadius": 4,
+          "onClick": {
+            "function": "customui:gui/confirm_accepted",
+            "sound": "minecraft:ui.button.click",
+            "close": true
+          }
+        },
+        {
+          "type": "text", "id": "ok_label",
+          "anchor": "bottom_left", "origin": "bottom_left",
+          "x": 14, "y": -16, "w": 66, "h": 9,
+          "zIndex": 2, "text": "确认", "fontSize": 8, "color": "#FFFFFFFF", "align": "center"
+        },
+        {
+          "type": "rounded_rect", "id": "cancel_bg",
+          "anchor": "bottom_right", "origin": "bottom_right",
+          "x": -14, "y": -12, "w": 66, "h": 16,
+          "zIndex": 1, "fill": "#C04E342E", "cornerRadius": 4,
+          "closeButton": true,
+          "onClick": { "sound": "minecraft:ui.button.click" }
+        },
+        {
+          "type": "text", "id": "cancel_label",
+          "anchor": "bottom_right", "origin": "bottom_right",
+          "x": -14, "y": -16, "w": 66, "h": 9,
+          "zIndex": 2, "text": "取消", "fontSize": 8, "color": "#FFFFFFFF", "align": "center"
+        }
+      ]
+    }
+  ]
+}

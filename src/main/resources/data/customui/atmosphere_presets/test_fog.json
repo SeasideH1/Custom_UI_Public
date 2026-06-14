@@ -1,0 +1,11 @@
+{
+  "fadeInTicks": 20,
+  "fadeOutTicks": 20,
+  "easing": "LINEAR",
+  "fog": {
+    "color": [1.0, 0.0, 0.0],
+    "nearDistance": 10,
+    "farDistance": 50,
+    "shape": "SPHERE"
+  }
+}

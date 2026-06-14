@@ -1,0 +1,110 @@
+{
+  "format": 2,
+  "id": "customui:virtual_score_demo",
+  "lifetime": -1,
+  "elements": [
+    {
+      "type": "rounded_rect",
+      "id": "bg",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 8, "y": 8, "w": 132, "h": 64,
+      "zIndex": 0,
+      "fill": "#C8101820",
+      "cornerRadius": 6
+    },
+    {
+      "type": "gradient_rect",
+      "id": "accent",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 8, "y": 8, "w": 132, "h": 2,
+      "zIndex": 1,
+      "fill": "#E0FFC640",
+      "fill2": "#00FFC640",
+      "direction": "horizontal"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 14, "y": 14, "w": 120, "h": 9,
+      "zIndex": 2,
+      "text": "{\"text\":\"虚拟实体计分绑定\",\"bold\":true,\"color\":\"#FFC640\"}",
+      "align": "left",
+      "autoFit": true
+    },
+    {
+      "type": "progress",
+      "id": "energy_pie",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 14, "y": 28, "w": 30, "h": 30,
+      "zIndex": 2,
+      "max": 100,
+      "direction": "pie",
+      "barColor": "#90FFC640",
+      "bgColor": "#60222C33",
+      "dataSource": "scoreboard:demo_energy:#demo"
+    },
+    {
+      "type": "circle",
+      "id": "energy_ring",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 13, "y": 27, "w": 32, "h": 32,
+      "zIndex": 3,
+      "fill": "#90E6EDF3",
+      "ringThickness": 1.5
+    },
+    {
+      "type": "text",
+      "id": "energy_value",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 14, "y": 28, "w": 30, "h": 30,
+      "zIndex": 4,
+      "text": "{value}",
+      "align": "center",
+      "autoFit": true,
+      "dataSource": "scoreboard:demo_energy:#demo"
+    },
+    {
+      "type": "text",
+      "id": "holder_hint",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 52, "y": 30, "w": 84, "h": 9,
+      "zIndex": 2,
+      "text": "持有者 #demo",
+      "color": "#FFD8E1E8",
+      "fontSize": 7,
+      "align": "left"
+    },
+    {
+      "type": "progress",
+      "id": "energy_bar",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 52, "y": 42, "w": 82, "h": 5,
+      "zIndex": 2,
+      "max": 100,
+      "barColor": "#FFFFC640",
+      "bgColor": "#80222C33",
+      "dataSource": "scoreboard:demo_energy:#demo"
+    },
+    {
+      "type": "text",
+      "id": "cmd_hint",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 52, "y": 52, "w": 84, "h": 8,
+      "zIndex": 2,
+      "text": "set #demo demo_energy",
+      "color": "#FF9AA7B0",
+      "fontSize": 6,
+      "align": "left"
+    }
+  ]
+}

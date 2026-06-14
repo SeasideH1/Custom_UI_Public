@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "customui:block/fast_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "customui:block/fast_ladder"
+    },
+    "facing=south": {
+      "model": "customui:block/fast_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "customui:block/fast_ladder",
+      "y": 270
+    }
+  }
+}
+

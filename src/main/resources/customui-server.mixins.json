@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.lootmatrix.customui.mixin",
+  "plugin": "com.lootmatrix.customui.mixin.CustomUIMixinPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "customui.refmap.json",
+  "mixins": [
+    "EntityDataAccessorMixin",
+    "PlayerListRespawnMixin",
+    "ServerPlayerRestoreFromMixin",
+    "TaczConfigMixin",
+    "TaczEntityKineticBulletMixin",
+    "TaczInaccuracyTypeMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}
+

@@ -1,0 +1,39 @@
+{
+  "fadeInTicks": 100,
+  "fadeOutTicks": 60,
+  "easing": "EASE_IN_OUT_CUBIC",
+  "fog": {
+    "color": [0.05, 0.2, 0.1],
+    "nearDistance": 10,
+    "farDistance": 80,
+    "shape": "SPHERE"
+  },
+  "sky": {
+    "type": "COLOR",
+    "zenith": [0.0, 0.12, 0.08],
+    "horizon": [0.02, 0.25, 0.15]
+  },
+  "sun": {
+    "visible": true,
+    "scale": 0.8,
+    "color": [0.4, 1.0, 0.5]
+  },
+  "moon": {
+    "visible": true,
+    "scale": 1.5,
+    "color": [0.2, 0.9, 0.4]
+  },
+  "stars": {
+    "visible": true,
+    "density": 2.5,
+    "color": [0.3, 1.0, 0.5],
+    "brightness": 1.8
+  },
+  "clouds": {
+    "visible": false
+  },
+  "ambient": {
+    "brightnessMultiplier": 1.2,
+    "nightVision": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "format": 2,
+  "id": "customui:hud_key_hint",
+  "_doc": "常驻按键提示 HUD 示例：用原生 keybind 文本组件显示玩家实际绑定的交互键1。配合 GUI 关闭函数使用：玩家关闭武器库时 function 里 /customui hud play @s customui:hud_key_hint，打开时 stop。播放: /customui hud play @s customui:hud_key_hint",
+  "lifetime": -1,
+  "elements": [
+    {
+      "type": "group",
+      "id": "hint_panel",
+      "anchor": "bottom_right", "origin": "bottom_right",
+      "x": -8, "y": -8, "w": 130, "h": 18,
+      "zIndex": 0,
+      "keyframes": [
+        { "tick": 0, "x": 130, "opacity": 0 },
+        { "tick": 10, "x": -8, "opacity": 1, "easing": "easeOutCubic" }
+      ],
+      "children": [
+        {
+          "type": "rounded_rect", "id": "hint_bg",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 0, "y": 0, "w": 130, "h": 18,
+          "zIndex": 0, "fill": "#A0101820", "cornerRadius": 5
+        },
+        {
+          "type": "text", "id": "hint_text",
+          "anchor": "center", "origin": "center",
+          "x": 0, "y": 0, "w": 124, "h": 10,
+          "zIndex": 1,
+          "text": [
+            { "text": "按 ", "color": "#D8E1E8" },
+            { "keybind": "key.customui.interact1", "color": "#4FC3F7", "bold": true },
+            { "text": " 打开武器库", "color": "#D8E1E8" }
+          ],
+          "fontSize": 8, "align": "center", "autoFit": true
+        }
+      ]
+    }
+  ]
+}

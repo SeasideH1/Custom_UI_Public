@@ -1,0 +1,77 @@
+{
+  "format": 2,
+  "id": "customui:anim2d_bounce_popup",
+  "_doc": "2D 缓动展示：屏幕中央弹窗。面板用 easeOutBack(过冲回弹)，标题用 easeOutElastic(弹性)，角标用 easeOutBounce(落地弹跳)，并演示 easings 按属性覆盖缓动与 flash 闪烁。播放: /customui hud play @s customui:anim2d_bounce_popup",
+  "lifetime": 90,
+  "loop": false,
+  "elements": [
+    {
+      "type": "rect",
+      "id": "popup_panel",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": -20, "w": 140, "h": 52,
+      "zIndex": 0,
+      "fill": "#D0141B22",
+      "keyframes": [
+        { "tick": 0, "scale": 0.1, "opacity": 0 },
+        { "tick": 12, "scale": 1.0, "opacity": 1, "easings": { "scale": "easeOutBack", "opacity": "easeOutQuad" } },
+        { "tick": 74, "opacity": 1 },
+        { "tick": 88, "scale": 0.85, "opacity": 0, "easing": "easeInQuad" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "popup_title",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": -30, "w": 130, "h": 12,
+      "zIndex": 2,
+      "text": "{\"text\":\"胜 利\",\"color\":\"#FFD54F\",\"bold\":true}",
+      "fontSize": 14,
+      "align": "center",
+      "keyframes": [
+        { "tick": 6, "scale": 0.2, "opacity": 0 },
+        { "tick": 26, "scale": 1.0, "opacity": 1, "easings": { "scale": "easeOutElastic", "opacity": "easeOutQuad" } },
+        { "tick": 74, "opacity": 1 },
+        { "tick": 88, "opacity": 0, "easing": "easeInQuad" }
+      ]
+    },
+    {
+      "type": "rect",
+      "id": "popup_badge",
+      "anchor": "center",
+      "origin": "center",
+      "x": -58, "y": -38, "w": 8, "h": 8,
+      "zIndex": 3,
+      "fill": "#FFFFD54F",
+      "rotation": 45,
+      "keyframes": [
+        { "tick": 8, "y": -70, "opacity": 0 },
+        { "tick": 30, "y": -38, "opacity": 1, "easings": { "y": "easeOutBounce", "opacity": "easeOutQuad" } },
+        { "tick": 36, "flash": 0 },
+        { "tick": 40, "flash": 1.5, "flashMin": 0.4 },
+        { "tick": 64, "flash": 0 },
+        { "tick": 74, "opacity": 1 },
+        { "tick": 88, "opacity": 0, "easing": "easeInQuad" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "popup_sub",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": -10, "w": 130, "h": 9,
+      "zIndex": 2,
+      "text": "占领成功 · 防守 120 秒",
+      "color": "#FFD8E1E8",
+      "align": "center",
+      "keyframes": [
+        { "tick": 14, "opacity": 0, "y": -4 },
+        { "tick": 30, "opacity": 1, "y": -10, "easing": "easeOutCubic" },
+        { "tick": 74, "opacity": 1 },
+        { "tick": 88, "opacity": 0, "easing": "easeInQuad" }
+      ]
+    }
+  ]
+}

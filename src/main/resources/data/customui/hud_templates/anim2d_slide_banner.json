@@ -1,0 +1,70 @@
+{
+  "format": 2,
+  "id": "customui:anim2d_slide_banner",
+  "_doc": "2D 入门示例：左上角横幅。演示 x 位移滑入(easeOutCubic)、停留、滑出(easeInQuad)与透明度淡入淡出的配合。播放: /customui hud play @s customui:anim2d_slide_banner",
+  "lifetime": 100,
+  "loop": false,
+  "elements": [
+    {
+      "type": "rect",
+      "id": "banner_bg",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 8, "y": 16, "w": 150, "h": 34,
+      "zIndex": 0,
+      "fill": "#C0101820",
+      "keyframes": [
+        { "tick": 0, "x": -170, "opacity": 0 },
+        { "tick": 14, "x": 8, "opacity": 1, "easing": "easeOutCubic" },
+        { "tick": 78, "x": 8, "opacity": 1 },
+        { "tick": 96, "x": -170, "opacity": 0, "easing": "easeInQuad" }
+      ]
+    },
+    {
+      "type": "rect",
+      "id": "banner_edge",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 8, "y": 16, "w": 2, "h": 34,
+      "zIndex": 1,
+      "fill": "#FF4FC3F7",
+      "keyframes": [
+        { "tick": 0, "x": -170, "opacity": 0 },
+        { "tick": 16, "x": 8, "opacity": 1, "easing": "easeOutCubic" },
+        { "tick": 78, "x": 8, "opacity": 1 },
+        { "tick": 96, "x": -170, "opacity": 0, "easing": "easeInQuad" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "banner_title",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 16, "y": 22, "w": 136, "h": 10,
+      "zIndex": 2,
+      "text": "{\"text\":\"任务更新\",\"color\":\"#4FC3F7\",\"bold\":true}",
+      "keyframes": [
+        { "tick": 4, "x": -160, "opacity": 0 },
+        { "tick": 18, "x": 16, "opacity": 1, "easing": "easeOutCubic" },
+        { "tick": 78, "x": 16, "opacity": 1 },
+        { "tick": 94, "x": -160, "opacity": 0, "easing": "easeInQuad" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "banner_sub",
+      "anchor": "top_left",
+      "origin": "top_left",
+      "x": 16, "y": 35, "w": 136, "h": 9,
+      "zIndex": 2,
+      "text": "前往新的目标点",
+      "color": "#FFD8E1E8",
+      "keyframes": [
+        { "tick": 8, "x": -160, "opacity": 0 },
+        { "tick": 22, "x": 16, "opacity": 1, "easing": "easeOutCubic" },
+        { "tick": 78, "x": 16, "opacity": 1 },
+        { "tick": 94, "x": -160, "opacity": 0, "easing": "easeInQuad" }
+      ]
+    }
+  ]
+}

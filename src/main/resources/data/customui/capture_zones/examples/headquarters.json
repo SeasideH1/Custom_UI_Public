@@ -1,0 +1,24 @@
+{
+  "id": "customui:hq_main",
+  "displayName": "HQ",
+  "origin": [0, 64, 0],
+  "captureTimeTicks": 120,
+  "gameMode": "headquarters",
+  "scorePerTick": 0.1,
+  "scoreLimit": 400,
+  "rotateAfterCapture": true,
+  "nextZoneId": "customui:hq_secondary",
+  "lockAfterCaptureTicks": 600,
+  "minPlayersToCapture": 2,
+  "allowRecapture": false,
+  "onCaptureStart": "customui:zone/hq_attack_start",
+  "onCaptureComplete": "customui:zone/hq_captured",
+  "ops": [
+    {
+      "type": "box",
+      "mode": "add",
+      "min": [-5, 64, -5],
+      "max": [5, 70, 5]
+    }
+  ]
+}

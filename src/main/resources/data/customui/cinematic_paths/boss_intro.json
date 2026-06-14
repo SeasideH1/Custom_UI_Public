@@ -1,0 +1,62 @@
+{
+  "loop": false,
+  "keyframes": [
+    {
+      "position": [100.0, 72.0, 200.0],
+      "lookAt": [100.0, 65.0, 210.0],
+      "roll": 0.0,
+      "positionPathInterp": "CATMULL_ROM",
+      "positionPathMerge": true,
+      "positionMoveEasing": "EASE_IN_OUT",
+      "positionMoveMerge": true,
+      "orientationPathInterp": "CATMULL_ROM",
+      "orientationPathMerge": true,
+      "orientationMoveEasing": "EASE_IN_OUT",
+      "orientationMoveMerge": true,
+      "fov": 90.0,
+      "duration": 80,
+      "absolutePosition": true,
+      "nightVision": false,
+      "sendChunks": false,
+      "hideHud": true,
+      "showSelf": true,
+      "sendChunksRadius": 8
+    },
+    {
+      "position": [108.0, 68.0, 205.0],
+      "lookAt": [100.0, 65.0, 210.0],
+      "roll": 5.0,
+      "positionPathInterp": "CATMULL_ROM",
+      "positionPathMerge": true,
+      "positionMoveEasing": "EASE_OUT",
+      "positionMoveMerge": true,
+      "orientationPathInterp": "CATMULL_ROM",
+      "orientationPathMerge": true,
+      "orientationMoveEasing": "EASE_OUT",
+      "orientationMoveMerge": true,
+      "fov": 70.0,
+      "duration": 100,
+      "absolutePosition": true,
+      "hideHud": true,
+      "showSelf": true
+    },
+    {
+      "position": [102.0, 66.5, 212.0],
+      "lookAt": [100.0, 65.0, 210.0],
+      "roll": 0.0,
+      "positionPathInterp": "CATMULL_ROM",
+      "positionPathMerge": false,
+      "positionMoveEasing": "EASE_IN_OUT",
+      "positionMoveMerge": false,
+      "orientationPathInterp": "CATMULL_ROM",
+      "orientationPathMerge": false,
+      "orientationMoveEasing": "EASE_IN_OUT",
+      "orientationMoveMerge": false,
+      "fov": 60.0,
+      "duration": 60,
+      "absolutePosition": true,
+      "hideHud": true,
+      "showSelf": true
+    }
+  ]
+}

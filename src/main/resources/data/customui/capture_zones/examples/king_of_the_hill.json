@@ -1,0 +1,28 @@
+{
+  "id": "customui:koth_hill",
+  "displayName": "The Hill",
+  "origin": [0, 70, 0],
+  "captureTimeTicks": 100,
+  "gameMode": "koth",
+  "scorePerTick": 0.1,
+  "scoreLimit": 500,
+  "roundTimeTicks": 6000,
+  "minPlayersToCapture": 1,
+  "allowRecapture": true,
+  "onCaptureComplete": "customui:zone/koth_captured",
+  "ops": [
+    {
+      "type": "box",
+      "mode": "add",
+      "min": [-10, 70, -10],
+      "max": [10, 76, 10]
+    },
+    {
+      "type": "cylinder",
+      "mode": "subtract",
+      "center": [0, 70, 0],
+      "radius": 2.0,
+      "height": 6.0
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+# eclipse
+bin/
+*.launch
+.settings
+.metadata
+.classpath
+.project
+.factorypath
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build/
+.gradle
+
+# other
+eclipse
+run/
+run-data/
+logs/
+*.log
+*.log.gz
+.gradle-user/
+.gradle-user-codex/
+runclient-overlay.log
+tmp/
+
+# local tooling / scratch artifacts
+.npm-cache/
+/META-INF/
+plan-tree-*.tgz
+tmp_*.class
+cursor-effect-preview.html
+kill-message-feed-preview.html
+
+# Files from Forge MDK
+forge*changelog.txt
+
+# AIs
+.claude/
+.cursor/
+.eclipse/
+.github/
+.kiro/
+.vscode/
+.bin/
+.build/
+.debug_docs/
+.docs/
+.run/
+.run-data/
+.tmp/
+.tools/
+.*.html
+.*.log
+.*.launch
+.*.txt
+.*.py

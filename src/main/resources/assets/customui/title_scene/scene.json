@@ -1,0 +1,55 @@
+{
+  "enabled": true,
+  "glassButtons": true,
+
+  "skyTopColor": "#0B1026",
+  "skyBottomColor": "#16243C",
+  "fogColor": "#0B0F14",
+  "fogStart": 14.0,
+  "fogEnd": 46.0,
+
+  "skyLight": 13,
+  "blockLight": 12,
+  "minBrightness": 0.18,
+  "transitionTicks": 18,
+
+  "entrance": {
+    "keyframes": [
+      {
+        "position": [24, 26, -30],
+        "lookAt": [0, 6, 0],
+        "fov": 85,
+        "duration": 70,
+        "positionMoveEasing": "EASE_IN_OUT_CUBIC",
+        "orientationMoveEasing": "EASE_IN_OUT_CUBIC"
+      },
+      {
+        "position": [8, 12, -16],
+        "lookAt": [0, 5, 0],
+        "fov": 75,
+        "duration": 0
+      }
+    ]
+  },
+
+  "idle": {
+    "loop": true,
+    "keyframes": [
+      { "position": [8, 12, -16], "lookAt": [0, 5, 0], "fov": 75, "duration": 160 },
+      { "position": [14, 11, -6], "lookAt": [0, 5, 0], "fov": 75, "duration": 160 },
+      { "position": [8, 13, 4],   "lookAt": [0, 5, 0], "fov": 75, "duration": 160 },
+      { "position": [-2, 12, -10], "lookAt": [0, 5, 0], "fov": 75, "duration": 160 }
+    ]
+  },
+
+  "anchors": {
+    "title":        { "position": [8, 12, -16], "lookAt": [0, 5, 0], "fov": 75, "duration": 0 },
+    "singleplayer": { "position": [-10, 9, -12], "lookAt": [0, 4, 2], "fov": 70, "duration": 0 },
+    "multiplayer":  { "position": [12, 8, -10], "lookAt": [0, 4, 2], "fov": 70, "duration": 0 },
+    "realms":       { "position": [12, 14, -4], "lookAt": [0, 6, 0], "fov": 70, "duration": 0 },
+    "options":      { "position": [0, 16, -10], "lookAt": [0, 4, 0], "fov": 65, "duration": 0 },
+    "language":     { "position": [-4, 15, -8], "lookAt": [0, 4, 0], "fov": 65, "duration": 0 },
+    "packs":        { "position": [4, 15, -8],  "lookAt": [0, 4, 0], "fov": 65, "duration": 0 },
+    "dive":         { "position": [0, 6, -4],   "lookAt": [0, 6, 8], "fov": 95, "duration": 0 }
+  }
+}

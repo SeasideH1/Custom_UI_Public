@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "axis=z,waterlogged=false": {"model": "customui:block/double_vertical_slab"},
+    "axis=z,waterlogged=true":  {"model": "customui:block/double_vertical_slab"},
+    "axis=x,waterlogged=false": {"model": "customui:block/double_vertical_slab"},
+    "axis=x,waterlogged=true":  {"model": "customui:block/double_vertical_slab"}
+  }
+}
+

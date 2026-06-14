@@ -1,0 +1,104 @@
+{
+  "format": 2,
+  "id": "customui:proj_2d_to_3d",
+  "_doc": "2D→3D 投影转移：先在屏幕中央以 2D 显示任务提示，再通过 space 轨道平滑过渡到世界坐标投影；演示 distanceScale / throughWalls / aimFade。建议在 world=[0,67,4] 附近站立并面向该点测试。播放: /customui hud play @s customui:proj_2d_to_3d",
+  "lifetime": 140,
+  "loop": false,
+  "elements": [
+    {
+      "type": "rect",
+      "id": "transfer_panel",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": -28, "w": 120, "h": 40,
+      "zIndex": 0,
+      "fill": "#D0141B22",
+      "projection": {
+        "world": [0, 67, 4],
+        "distanceScale": { "enabled": true, "reference": 6, "min": 0.45, "max": 1.4 },
+        "throughWalls": false,
+        "aimFade": { "enabled": true, "innerAngle": 6, "outerAngle": 22, "minOpacity": 0.25 }
+      },
+      "keyframes": [
+        { "tick": 0, "space": "2d", "opacity": 0, "scale": 0.6 },
+        { "tick": 12, "space": "2d", "opacity": 1, "scale": 1, "easings": { "opacity": "easeOutQuad", "scale": "easeOutBack" } },
+        { "tick": 48, "space": "2d", "opacity": 1 },
+        { "tick": 88, "space": "3d", "opacity": 1, "easings": { "space": "easeInOutCubic" } },
+        { "tick": 120, "space": "3d", "opacity": 1 },
+        { "tick": 138, "space": "3d", "opacity": 0, "easing": "easeInQuad" }
+      ]
+    },
+    {
+      "type": "rect",
+      "id": "transfer_accent",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": -48, "w": 120, "h": 2,
+      "zIndex": 1,
+      "fill": "#FF4FC3F7",
+      "projection": {
+        "world": [0, 67.8, 4],
+        "distanceScale": { "enabled": true, "reference": 6, "min": 0.45, "max": 1.4 },
+        "throughWalls": false,
+        "aimFade": { "enabled": true, "innerAngle": 6, "outerAngle": 22, "minOpacity": 0.25 }
+      },
+      "keyframes": [
+        { "tick": 0, "space": "2d", "opacity": 0 },
+        { "tick": 14, "space": "2d", "opacity": 1, "easing": "easeOutQuad" },
+        { "tick": 48, "space": "2d", "opacity": 1 },
+        { "tick": 88, "space": "3d", "opacity": 1, "easings": { "space": "easeInOutCubic" } },
+        { "tick": 120, "space": "3d", "opacity": 1 },
+        { "tick": 138, "space": "3d", "opacity": 0, "easing": "easeInQuad" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "transfer_title",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": -36, "w": 112, "h": 11,
+      "zIndex": 2,
+      "text": "{\"text\":\"目标点\",\"color\":\"#4FC3F7\",\"bold\":true}",
+      "align": "center",
+      "projection": {
+        "world": [0, 67.4, 4],
+        "distanceScale": { "enabled": true, "reference": 6, "min": 0.45, "max": 1.4 },
+        "throughWalls": false,
+        "aimFade": { "enabled": true, "innerAngle": 6, "outerAngle": 22, "minOpacity": 0.25 }
+      },
+      "keyframes": [
+        { "tick": 4, "space": "2d", "opacity": 0 },
+        { "tick": 18, "space": "2d", "opacity": 1, "easing": "easeOutQuad" },
+        { "tick": 48, "space": "2d", "opacity": 1 },
+        { "tick": 88, "space": "3d", "opacity": 1, "easings": { "space": "easeInOutCubic" } },
+        { "tick": 120, "space": "3d", "opacity": 1 },
+        { "tick": 138, "space": "3d", "opacity": 0, "easing": "easeInQuad" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "transfer_hint",
+      "anchor": "center",
+      "origin": "center",
+      "x": 0, "y": -18, "w": 112, "h": 9,
+      "zIndex": 2,
+      "text": "2D 提示 → 3D 世界投影",
+      "color": "#FFD8E1E8",
+      "align": "center",
+      "projection": {
+        "world": [0, 66.9, 4],
+        "distanceScale": { "enabled": true, "reference": 6, "min": 0.45, "max": 1.4 },
+        "throughWalls": false,
+        "aimFade": { "enabled": true, "innerAngle": 6, "outerAngle": 22, "minOpacity": 0.25 }
+      },
+      "keyframes": [
+        { "tick": 8, "space": "2d", "opacity": 0 },
+        { "tick": 22, "space": "2d", "opacity": 1, "easing": "easeOutQuad" },
+        { "tick": 48, "space": "2d", "opacity": 1 },
+        { "tick": 88, "space": "3d", "opacity": 1, "easings": { "space": "easeInOutCubic" } },
+        { "tick": 120, "space": "3d", "opacity": 1 },
+        { "tick": 138, "space": "3d", "opacity": 0, "easing": "easeInQuad" }
+      ]
+    }
+  ]
+}

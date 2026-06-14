@@ -1,0 +1,9 @@
+﻿{
+  "variants": {
+    "type=north": {"model": "customui:block/cut_copper_vertical_slab", "y": 0},
+    "type=south": {"model": "customui:block/cut_copper_vertical_slab", "y": 180},
+    "type=east": {"model": "customui:block/cut_copper_vertical_slab", "y": 90},
+    "type=west": {"model": "customui:block/cut_copper_vertical_slab", "y": 270},
+    "type=double": {"model": "minecraft:block/cut_copper"}
+  }
+}

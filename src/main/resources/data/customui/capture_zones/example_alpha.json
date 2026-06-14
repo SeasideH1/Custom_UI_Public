@@ -1,0 +1,25 @@
+{
+  "id": "customui:example_alpha",
+  "displayName": "A",
+  "origin": [120, 64, 230],
+  "voxel_size": 1.0,
+  "captureTimeTicks": 200,
+  "onCaptureStart": "customui:capture_start",
+  "onCaptureComplete": "customui:capture_complete",
+  "onContested": "customui:capture_contested",
+  "ops": [
+    {
+      "type": "cylinder",
+      "center": [120, 64, 230],
+      "radius": 8.0,
+      "height": 5.0,
+      "mode": "add"
+    },
+    {
+      "type": "box",
+      "min": [117, 64, 227],
+      "max": [123, 67, 233],
+      "mode": "subtract"
+    }
+  ]
+}

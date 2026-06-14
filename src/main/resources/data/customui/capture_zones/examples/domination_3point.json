@@ -1,0 +1,25 @@
+{
+  "id": "customui:domination_alpha",
+  "displayName": "Alpha",
+  "origin": [100, 64, 200],
+  "captureTimeTicks": 200,
+  "gameMode": "domination",
+  "scorePerTick": 0.05,
+  "scoreLimit": 300,
+  "roundTimeTicks": 12000,
+  "minPlayersToCapture": 1,
+  "allowRecapture": true,
+  "onCaptureStart": "customui:zone/capture_start",
+  "onCaptureComplete": "customui:zone/capture_complete_alpha",
+  "onContested": "customui:zone/contested",
+  "onCaptureTick": "customui:zone/capture_tick",
+  "ops": [
+    {
+      "type": "cylinder",
+      "mode": "add",
+      "center": [100, 64, 200],
+      "radius": 8.0,
+      "height": 5.0
+    }
+  ]
+}

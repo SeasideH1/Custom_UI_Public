@@ -1,0 +1,31 @@
+{
+  "fadeInTicks": 80,
+  "fadeOutTicks": 60,
+  "easing": "EASE_IN",
+  "fog": {
+    "color": [0.6, 0.45, 0.2],
+    "nearDistance": 2,
+    "farDistance": 40,
+    "shape": "SPHERE",
+    "density": 1.5
+  },
+  "sky": {
+    "type": "COLOR",
+    "zenith": [0.5, 0.35, 0.1],
+    "horizon": [0.65, 0.5, 0.25]
+  },
+  "sun": {
+    "visible": true,
+    "scale": 0.5,
+    "color": [0.8, 0.6, 0.2]
+  },
+  "moon": {
+    "visible": false
+  },
+  "stars": {
+    "visible": false
+  },
+  "clouds": {
+    "visible": false
+  }
+}

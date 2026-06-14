@@ -1,0 +1,236 @@
+{
+  "format": 2,
+  "id": "customui:gui_gun_select",
+  "_doc": "枪械选择 GUI 示例。先激活: /customui gui activate @s customui:gui_gun_select，之后交互键1(回退 B)可打开；指令 open 不需激活。卡片用 GROUP 组合（背景+名称+描述一体移动）；步枪需要 scoreboard 条件 gun_level>=2，不满足时播放低音并把卡片边框变红。点击成功后服务端校验条件再执行 function（防作弊），function 不存在时静默跳过。ESC/B 关闭并触发关闭函数。",
+  "lifetime": -1,
+  "screenType": "gui",
+  "gui": {
+    "blur": true,
+    "open": {
+      "interactKey": 1,
+      "key": "key.keyboard.b",
+      "translation": "gui.customui.gun_select.open",
+      "name": "gun_select_open",
+      "function": "customui:gui/gun_select_opened"
+    },
+    "close": {
+      "key": "key.keyboard.b",
+      "translation": "gui.customui.gun_select.close",
+      "name": "gun_select_close",
+      "function": "customui:gui/gun_select_closed"
+    }
+  },
+  "elements": [
+    {
+      "type": "rect",
+      "id": "dim",
+      "anchor": "center", "origin": "center",
+      "x": 0, "y": 0, "w": 4000, "h": 4000,
+      "zIndex": 0,
+      "fill": "#60000000"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "anchor": "center", "origin": "center",
+      "x": 0, "y": -78, "w": 200, "h": 14,
+      "zIndex": 10,
+      "text": "选择武器",
+      "fontSize": 12, "color": "#FFFFFFFF", "align": "center",
+      "keyframes": [
+        { "tick": 0, "y": -90, "opacity": 0 },
+        { "tick": 8, "y": -78, "opacity": 1, "easing": "easeOutCubic" }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "card_smg",
+      "anchor": "center", "origin": "center",
+      "x": -110, "y": 0, "w": 96, "h": 110,
+      "zIndex": 10,
+      "onClick": {
+        "function": "customui:gun/select_smg",
+        "sound": "minecraft:ui.button.click",
+        "close": true
+      },
+      "keyframes": [
+        { "tick": 0, "x": -130, "opacity": 0 },
+        { "tick": 10, "x": -110, "opacity": 1, "easing": "easeOutCubic" }
+      ],
+      "children": [
+        {
+          "type": "rounded_rect", "id": "smg_bg",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 0, "y": 0, "w": 96, "h": 110,
+          "zIndex": 0, "fill": "#C0182430", "cornerRadius": 6
+        },
+        {
+          "type": "border", "id": "smg_frame",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 0, "y": 0, "w": 96, "h": 110,
+          "zIndex": 1, "fill": "#FF4FC3F7", "borderThickness": 1
+        },
+        {
+          "type": "text", "id": "smg_name",
+          "anchor": "top_center", "origin": "top_center",
+          "x": 0, "y": 10, "w": 90, "h": 12,
+          "zIndex": 2, "text": "冲锋枪", "fontSize": 10, "color": "#FFFFFFFF", "align": "center"
+        },
+        {
+          "type": "text", "id": "smg_desc",
+          "anchor": "bottom_center", "origin": "bottom_center",
+          "x": 0, "y": -8, "w": 90, "h": 10,
+          "zIndex": 2, "text": "无需求 · 点击选择", "fontSize": 7, "color": "#FF9AA7B0", "align": "center", "autoFit": true
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "card_rifle",
+      "anchor": "center", "origin": "center",
+      "x": 0, "y": 0, "w": 96, "h": 110,
+      "zIndex": 10,
+      "condition": "scoreboard:gun_level >= 2",
+      "onClick": {
+        "function": "customui:gun/select_rifle",
+        "sound": "minecraft:ui.button.click",
+        "close": true
+      },
+      "onClickFail": {
+        "sound": "minecraft:block.note_block.bass",
+        "anim": "rifle_lock_tip",
+        "setColor": [
+          { "target": "rifle_frame", "fill": "#FFFF5252" }
+        ]
+      },
+      "keyframes": [
+        { "tick": 0, "opacity": 0 },
+        { "tick": 12, "opacity": 1, "easing": "easeOutCubic" }
+      ],
+      "children": [
+        {
+          "type": "rounded_rect", "id": "rifle_bg",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 0, "y": 0, "w": 96, "h": 110,
+          "zIndex": 0, "fill": "#C0182430", "cornerRadius": 6
+        },
+        {
+          "type": "border", "id": "rifle_frame",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 0, "y": 0, "w": 96, "h": 110,
+          "zIndex": 1, "fill": "#FF4FC3F7", "borderThickness": 1
+        },
+        {
+          "type": "text", "id": "rifle_name",
+          "anchor": "top_center", "origin": "top_center",
+          "x": 0, "y": 10, "w": 90, "h": 12,
+          "zIndex": 2, "text": "步枪", "fontSize": 10, "color": "#FFFFFFFF", "align": "center"
+        },
+        {
+          "type": "text", "id": "rifle_desc",
+          "anchor": "bottom_center", "origin": "bottom_center",
+          "x": 0, "y": -8, "w": 90, "h": 10,
+          "zIndex": 2, "text": "需要等级 2 (gun_level)", "fontSize": 7, "color": "#FF9AA7B0", "align": "center", "autoFit": true
+        },
+        {
+          "type": "text", "id": "rifle_lock_tip",
+          "anchor": "center", "origin": "center",
+          "x": 0, "y": 14, "w": 90, "h": 10,
+          "zIndex": 3, "text": "等级不足!", "fontSize": 8, "color": "#FFFF5252", "align": "center",
+          "keyframes": [
+            { "tick": 0, "opacity": 1, "scale": 1.3 },
+            { "tick": 6, "opacity": 1, "scale": 1, "easing": "easeOutBack" },
+            { "tick": 30, "opacity": 1 },
+            { "tick": 44, "opacity": 0, "easing": "easeInQuad" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "card_sniper",
+      "anchor": "center", "origin": "center",
+      "x": 110, "y": 0, "w": 96, "h": 110,
+      "zIndex": 10,
+      "condition": "scoreboard:gun_level >= 5",
+      "onClick": {
+        "function": "customui:gun/select_sniper",
+        "sound": "minecraft:ui.button.click",
+        "close": true
+      },
+      "onClickFail": {
+        "sound": "minecraft:block.note_block.bass",
+        "setColor": [
+          { "target": "sniper_frame", "fill": "#FFFF5252" },
+          { "target": "sniper_name", "textColor": "#FFFF5252" }
+        ]
+      },
+      "keyframes": [
+        { "tick": 0, "x": 130, "opacity": 0 },
+        { "tick": 10, "x": 110, "opacity": 1, "easing": "easeOutCubic" }
+      ],
+      "children": [
+        {
+          "type": "rounded_rect", "id": "sniper_bg",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 0, "y": 0, "w": 96, "h": 110,
+          "zIndex": 0, "fill": "#C0182430", "cornerRadius": 6
+        },
+        {
+          "type": "border", "id": "sniper_frame",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 0, "y": 0, "w": 96, "h": 110,
+          "zIndex": 1, "fill": "#FF4FC3F7", "borderThickness": 1
+        },
+        {
+          "type": "text", "id": "sniper_name",
+          "anchor": "top_center", "origin": "top_center",
+          "x": 0, "y": 10, "w": 90, "h": 12,
+          "zIndex": 2, "text": "狙击枪", "fontSize": 10, "color": "#FFFFFFFF", "align": "center"
+        },
+        {
+          "type": "text", "id": "sniper_desc",
+          "anchor": "bottom_center", "origin": "bottom_center",
+          "x": 0, "y": -8, "w": 90, "h": 10,
+          "zIndex": 2, "text": "需要等级 5 (gun_level)", "fontSize": 7, "color": "#FF9AA7B0", "align": "center", "autoFit": true
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "close_btn",
+      "anchor": "center", "origin": "center",
+      "x": 0, "y": 78, "w": 72, "h": 16,
+      "zIndex": 10,
+      "closeButton": true,
+      "onClick": { "sound": "minecraft:ui.button.click" },
+      "children": [
+        {
+          "type": "rounded_rect", "id": "close_bg",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 0, "y": 0, "w": 72, "h": 16,
+          "zIndex": 0, "fill": "#C033424E", "cornerRadius": 4
+        },
+        {
+          "type": "text", "id": "close_label",
+          "anchor": "center", "origin": "center",
+          "x": 0, "y": 0, "w": 70, "h": 10,
+          "zIndex": 1, "text": "关闭 [ESC/B]", "fontSize": 8, "color": "#FFD8E1E8", "align": "center"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "hint",
+      "anchor": "bottom_center", "origin": "bottom_center",
+      "x": 0, "y": -24, "w": 260, "h": 10,
+      "zIndex": 10,
+      "text": [
+        { "text": "提示: 交互键1当前绑定为 ", "color": "#9AA7B0" },
+        { "keybind": "key.customui.interact1", "color": "#4FC3F7" },
+        { "text": " (按键设置中可修改)", "color": "#9AA7B0" }
+      ],
+      "fontSize": 8, "align": "center"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "format": 2,
+  "id": "customui:scoreboard_panel",
+  "lifetime": -1,
+  "elements": [
+    {
+      "type": "rounded_rect",
+      "id": "bg",
+      "anchor": "top_right",
+      "origin": "top_right",
+      "x": -8, "y": 8, "w": 120, "h": 76,
+      "zIndex": 0,
+      "fill": "#C0101820",
+      "cornerRadius": 6
+    },
+    {
+      "type": "gradient_rect",
+      "id": "title_bar",
+      "anchor": "top_right",
+      "origin": "top_right",
+      "x": -10, "y": 10, "w": 116, "h": 12,
+      "zIndex": 1,
+      "fill": "#A04FC3F7",
+      "fill2": "#104FC3F7",
+      "direction": "horizontal"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "anchor": "top_right",
+      "origin": "top_right",
+      "x": -14, "y": 12, "w": 108, "h": 9,
+      "zIndex": 2,
+      "text": "{\"text\":\"战况统计\",\"bold\":true}",
+      "align": "left",
+      "autoFit": true
+    },
+    {
+      "type": "text",
+      "id": "kills",
+      "anchor": "top_right",
+      "origin": "top_right",
+      "x": -14, "y": 27, "w": 108, "h": 10,
+      "zIndex": 2,
+      "text": "击杀  {value}",
+      "color": "#FFD8E1E8",
+      "align": "left",
+      "autoFit": true,
+      "dataSource": "scoreboard:kills"
+    },
+    {
+      "type": "text",
+      "id": "deaths",
+      "anchor": "top_right",
+      "origin": "top_right",
+      "x": -14, "y": 39, "w": 108, "h": 10,
+      "zIndex": 2,
+      "text": "死亡  {value}",
+      "color": "#FFD8E1E8",
+      "align": "left",
+      "autoFit": true,
+      "dataSource": "scoreboard:deaths"
+    },
+    {
+      "type": "text",
+      "id": "score",
+      "anchor": "top_right",
+      "origin": "top_right",
+      "x": -14, "y": 51, "w": 108, "h": 10,
+      "zIndex": 2,
+      "text": "{\"text\":\"分数  {value}\",\"color\":\"#4FC3F7\"}",
+      "align": "left",
+      "autoFit": true,
+      "dataSource": "scoreboard:score"
+    },
+    {
+      "type": "line",
+      "id": "divider",
+      "anchor": "top_right",
+      "origin": "top_right",
+      "x": -14, "y": 62, "w": 108, "h": 2,
+      "zIndex": 2,
+      "fill": "#40FFFFFF",
+      "lineThickness": 1
+    },
+    {
+      "type": "progress",
+      "id": "score_bar",
+      "anchor": "top_right",
+      "origin": "top_right",
+      "x": -14, "y": 70, "w": 108, "h": 5,
+      "zIndex": 2,
+      "max": 100,
+      "barColor": "#FF4FC3F7",
+      "bgColor": "#60223038",
+      "dataSource": "scoreboard:score"
+    }
+  ]
+}

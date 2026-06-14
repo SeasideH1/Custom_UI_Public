@@ -1,0 +1,66 @@
+{
+  "format": 2,
+  "id": "customui:anim_group_transfer",
+  "_doc": "GROUP 组合 2D→3D 转移示例：整块面板（背景+标题+进度条）作为一个组合从屏幕中央飞向世界坐标 [0,66,5]，子元素全程保持 2D 相对布局不散开。space 关键帧打在组合上。播放: /customui hud play @s customui:anim_group_transfer",
+  "lifetime": 120,
+  "loop": false,
+  "elements": [
+    {
+      "type": "group",
+      "id": "panel",
+      "anchor": "center", "origin": "center",
+      "x": 0, "y": 0, "w": 110, "h": 46,
+      "zIndex": 0,
+      "projection": {
+        "world": [0, 66, 5],
+        "distanceScale": { "enabled": true, "reference": 8, "min": 0.4, "max": 1.6 },
+        "throughWalls": true,
+        "edgeClamp": true
+      },
+      "keyframes": [
+        { "tick": 0, "space": "2d", "opacity": 0, "scale": 0.8 },
+        { "tick": 10, "space": "2d", "opacity": 1, "scale": 1, "easing": "easeOutCubic" },
+        { "tick": 40, "space": "2d" },
+        { "tick": 70, "space": "3d", "easing": "easeInOutCubic" },
+        { "tick": 110, "opacity": 1 },
+        { "tick": 120, "opacity": 0, "easing": "easeInQuad" }
+      ],
+      "children": [
+        {
+          "type": "rounded_rect", "id": "panel_bg",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 0, "y": 0, "w": 110, "h": 46,
+          "zIndex": 0, "fill": "#C0101820", "cornerRadius": 6
+        },
+        {
+          "type": "gradient_rect", "id": "panel_accent",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 4, "y": 4, "w": 102, "h": 10,
+          "zIndex": 1, "fill": "#A04FC3F7", "fill2": "#104FC3F7", "direction": "horizontal"
+        },
+        {
+          "type": "text", "id": "panel_title",
+          "anchor": "top_left", "origin": "top_left",
+          "x": 8, "y": 5, "w": 96, "h": 9,
+          "zIndex": 2, "text": "目标点 A", "fontSize": 8, "color": "#FFFFFFFF"
+        },
+        {
+          "type": "progress", "id": "panel_progress",
+          "anchor": "bottom_center", "origin": "bottom_center",
+          "x": 0, "y": -8, "w": 94, "h": 6,
+          "zIndex": 2, "value": 65, "max": 100,
+          "barColor": "#FF4FC3F7", "bgColor": "#80333333",
+          "keyframes": [
+            { "tick": 0, "opacity": 1 }
+          ]
+        },
+        {
+          "type": "text", "id": "panel_sub",
+          "anchor": "bottom_center", "origin": "bottom_center",
+          "x": 0, "y": -16, "w": 100, "h": 8,
+          "zIndex": 2, "text": "组合内子元素保持相对布局", "fontSize": 7, "color": "#FF9AA7B0", "align": "center", "autoFit": true
+        }
+      ]
+    }
+  ]
+}
